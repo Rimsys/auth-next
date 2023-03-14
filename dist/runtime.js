@@ -1513,7 +1513,7 @@ class Oauth2Scheme extends BaseScheme {
       let codeVerifier;
       if (this.options.codeChallengeMethod && this.options.codeChallengeMethod !== "implicit") {
         codeVerifier = this.$auth.$storage.getUniversal(this.name + ".pkce_code_verifier");
-        this.$auth.$storage.setUniversal(this.name + ".pkce_code_verifier", null);
+        // this.$auth.$storage.setUniversal(this.name + ".pkce_code_verifier", null);
       }
       const response = await this.$auth.request({
         method: "post",
@@ -1740,7 +1740,7 @@ class OpenIDConnectScheme extends Oauth2Scheme {
       let codeVerifier;
       if (this.options.codeChallengeMethod && this.options.codeChallengeMethod !== "implicit") {
         codeVerifier = this.$auth.$storage.getUniversal(this.name + ".pkce_code_verifier");
-        this.$auth.$storage.setUniversal(this.name + ".pkce_code_verifier", null);
+        // this.$auth.$storage.setUniversal(this.name + ".pkce_code_verifier", null);
       }
       const response = await this.$auth.request({
         method: "post",
